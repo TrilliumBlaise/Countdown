@@ -84,7 +84,7 @@ body {
 
 .container {
   display: flex;
-  gap: 1em;
+  gap: .7em;
   justify-content: center;
 }
 
