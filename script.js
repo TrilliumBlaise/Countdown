@@ -11,13 +11,17 @@ setInterval(() => {
 }, 250);
 
 function flipAllCards(time) {
-  const seconds = time % 60;
-  const minutes = Math.floor(time / 60) % 60;
+  const months = Math.floor(time / 2629746);
+  const weeks = Math.floor(time / 657436.5) % 4;
+  const days = Math.floor(time / 93919.5) % 7;
   const hours = Math.floor(time / 3600) % 24;
-  const days = Math.floor(time / 86400);
-  console.log(days);
+  const minutes = Math.floor(time / 60) % 60;
+  const seconds = time % 60;
 
-  flip(document.querySelector('[data-days-hundreds'), Math.floor(days / 100));
+  flip(document.querySelector('[data-months-tens'), Math.floor(months / 10));
+  flip(document.querySelector('[data-months-ones'), months % 10);
+  flip(document.querySelector('[data-weeks-tens'), Math.floor(weeks / 10));
+  flip(document.querySelector('[data-weeks-ones'), weeks % 10);
   flip(document.querySelector('[data-days-tens'), Math.floor(days / 10) % 10);
   flip(document.querySelector('[data-days-ones'), days % 10);
   flip(document.querySelector('[data-hours-tens'), Math.floor(hours / 10));
