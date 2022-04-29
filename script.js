@@ -1,3 +1,4 @@
+import { backgrounds } from './backgrounds.js'
 const DATE_TO_COUNT_TO = 'January 2, 2023';
 
 const countToDate = new Date(DATE_TO_COUNT_TO);
