@@ -15,6 +15,7 @@ body {
   justify-content: center;
   text-align: center;
   gap: 1em;
+  overflow: hidden;
 }
 
 .flip-card {
