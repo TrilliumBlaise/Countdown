@@ -17,7 +17,8 @@ function flipAllCards(time) {
   const hours = Math.floor(time / 3600) % 24;
   const minutes = Math.floor(time / 60) % 60;
   const seconds = time % 60;
-
+  
+  setBackground(hours);
   flip(document.querySelector('[data-months-tens'), Math.floor(months / 10));
   flip(document.querySelector('[data-months-ones'), months % 10);
   flip(document.querySelector('[data-weeks-tens'), Math.floor(weeks / 10));
@@ -58,4 +59,11 @@ function flip(flipCard, newNumber) {
     bottomFlip.remove();
   });
   flipCard.append(topFlip, bottomFlip);
+}
+
+function setBackground(hour) {
+  const background = document.querySelector('body');
+  background.style.backgroundImage = `url(${backgrounds[(hour % 12) - 1]})`;
+  background.style.backgroundSize = '100% 100%';
+  background.style.backgroundRepeat = 'no repeat';
 }
